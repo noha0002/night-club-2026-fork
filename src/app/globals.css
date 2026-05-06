@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --linear-gradient: linear-gradient(to right, #d9d9d900 0%, #ff2a70 51%, #d9d9d900 100%);
 }
 
 @theme inline {
@@ -11,8 +12,10 @@
   --font-sans: var(--font-ubuntu);
 
   --color-accent: oklch(0.6535 0.2419 9.27);
+  --color-linear-accent: var(--linear-gradient);
   --color-background: oklch(0 0 0);
   --color-background-secondary: oklch(0% 0 0 / 0.9);
+  --color-background-tertiary: oklch(0% 0 0 / 0.85);
   --color-text: oklch(1 0 0);
   --color-grey: oklch(0.8203 0 0);
 }
