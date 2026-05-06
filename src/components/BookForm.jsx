@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 function BookForm() {
   return (
     <div>
-      <h1 className="uppercase text-3xl font-bold">Book a table</h1>
+      <h1 className="uppercase text-3xl font-bold pb-8">Book a table</h1>
 
       <form className="flex flex-col gap-4">
         <input placeholder="Your Name" name="name" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full"></input>
