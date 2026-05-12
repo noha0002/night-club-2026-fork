@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Heading from "@/components/Heading";
 import ContactForm from "@/components/ContactForm";
 import Heading from "@/components/Heading";
 
