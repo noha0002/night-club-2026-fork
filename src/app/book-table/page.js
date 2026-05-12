@@ -7,9 +7,8 @@ function BookTable() {
     <div className="bg-background-tertiary">
       <Heading>Book a Table</Heading>
 
-      <TableBooking />
-
-      <main className="p-6 mt-4 mb-10">
+      <main className="p-6 mt-4 mb-10 md:mx-auto md:max-w-[1440px]">
+        <TableBooking />
         <BookForm />
       </main>
     </div>
