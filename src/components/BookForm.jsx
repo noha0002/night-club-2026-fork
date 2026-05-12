@@ -15,11 +15,13 @@ function BookForm() {
 
         <input placeholder="Number of Guests" name="num-of-guest" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-[85px]"></input>
 
-        <select name="choose-night" className=" bg-background-secondary border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-[85px]">
-          <option value="" disabled selected className=" md:max-h-[85px]">
+        <select name="choose-night" defaultValue="" className=" bg-background-secondary border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-[85px]">
+          <option value="" disabled>
             Choose Night
           </option>
-          <option value="night1">NO CONTENT YET</option>
+          <option value="night1">NO</option>
+          <option value="night2">CONTENT</option>
+          <option value="night3">YET</option>
         </select>
 
         <input placeholder="Your Contact Number" name="contact-num" className="border border-text text-lg pl-3 pr-3 pt-4.5 pb-4.5 w-full"></input>
