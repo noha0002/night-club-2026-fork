@@ -1,19 +1,19 @@
 import Heading from "@/components/Heading";
 import Image from "next/image";
 import Button from "@/components/Button";
-import ContactForm from "@/components/ContactForm";
+import CommentForm from "@/components/CommentForm";
 
 function EventDetails() {
   return (
-    <div className="bg-background-secondary">
+    <div className="">
       <Heading>Neon Nights</Heading>
 
-      <Image src="/footerbg.jpg" alt="Neon Nights Event" width={1440} height={615} className="w-full h-auto md:justify-center" />
+      <Image src="/footerbg.jpg" alt="Neon Nights Event" width={1440} height={615} className="w-[1440px] h-auto mt-10 md:justify-center md:mx-auto md:mt-20" />
 
-      <main className="p-6 mt-4 mb-10 md:max-w-[1440px] md:mx-auto">
+      <main className="p-6 mt-4 mb-10 md:max-w-360 md:mx-auto">
         <section className="flex flex-col gap-15 mb-20">
           <div>
-            <h2 className="uppercase text-2xl font-medium mb-4 md:text-4xl">Neon Nights Grand Opening</h2>
+            <h2 className="uppercase text-2xl font-medium mb-4 md:text-4xl md:mt-10">Neon Nights Grand Opening</h2>
             <p className="text-accent uppercase text-lg font-medium tracking-wide md:text-xl">
               MAY 9 · 21:00 | <span className="text-text">CENTER STAGE</span>
             </p>
@@ -35,7 +35,7 @@ function EventDetails() {
             </p>
           </div>
 
-          <div className="border-b-1 border-t-1 md:ml-40 md:mr-40 md:border-b-2 md:border-t-2">
+          <div className="border-b border-t mt-5 md:ml-40 md:mr-40 md:border-b-2 md:border-t-2 md:mt-10">
             <h3 className="uppercase text-xl font-medium tracking-wide pb-1.5 pt-2.5 md:text-2xl md:pb-5 md:pt-5">Schedule</h3>
             <ul className="list-inside font-light tracking-wide md:text-lg">
               <li className="pb-2 md:pb-6">
@@ -84,7 +84,7 @@ function EventDetails() {
             </p>
           </div>
 
-          <div className="md:max-w-[1231px]">
+          <div className="md:max-w-307.75">
             <p className="font-medium tracking-wide mt-6 pb-2 md:text-2xl">
               John Doe · <span className="text-accent md:text-lg"> Posted 03 jan 2018</span>
             </p>
@@ -96,8 +96,8 @@ function EventDetails() {
         </section>
 
         <h1 className="uppercase text-3xl font-bold pb-8 mt-20">Leave a comment</h1>
-        <section className="flex flex-col">
-          <ContactForm />
+        <section className="flex flex-col md:flex-none">
+          <CommentForm />
         </section>
       </main>
     </div>

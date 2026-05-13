@@ -3,12 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --linear-gradient: linear-gradient(to right, #d9d9d900 0%, #ff2a70 51%, #d9d9d900 100%);
+  --linear-gradient: linear-gradient(to right, oklch(0% 0 0 / 0) 0%, oklch(0.6535 0.2419 9.27) 51%, oklch(0% 0 0 / 0) 100%);
 }
 
 @theme inline {
-  /* --color-background: var(--background);
-  --color-foreground: var(--foreground); */
   --font-sans: var(--font-ubuntu);
 
   --color-accent: oklch(0.6535 0.2419 9.27);

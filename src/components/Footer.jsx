@@ -32,7 +32,7 @@ const Footer = () => {
               <Image src="/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
               <div className="flex flex-col gap-2 items-start">
-                <p className="text-lg leading-8 tracking-wide max-w-[306px] text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+                <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
                 <p className="text-accent tracking-wide font-medium">April 17, 2026</p>
               </div>
             </div>
@@ -41,7 +41,7 @@ const Footer = () => {
               <Image src="/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
               <div className="flex flex-col gap-2 items-start">
-                <p className="text-lg leading-8 tracking-wide max-w-[306px] text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+                <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
                 <p className="text-accent tracking-wide font-medium">April 17, 2026</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Footer = () => {
               <FaXTwitter size={20} className="text-accent" />
 
               <div className="flex flex-col gap-2 items-start">
-                <p className="text-lg leading-8 tracking-wide max-w-[360px] text-left">It is a long established fact that a reader will be distracted by the readable... </p>
+                <p className="text-lg leading-8 tracking-wide max-w-90text-left">It is a long established fact that a reader will be distracted by the readable... </p>
                 <p className="text-accent tracking-wide font-medium">5 hours ago</p>
               </div>
             </div>
@@ -62,7 +62,7 @@ const Footer = () => {
               <FaXTwitter size={20} className="text-accent" />
 
               <div className="flex flex-col gap-2 items-start">
-                <p className="text-lg leading-8 tracking-wide max-w-[360px] text-left">It is a long established fact that a reader will be distracted by the readable... </p>
+                <p className="text-lg leading-8 tracking-wide max-w-90 text-left">It is a long established fact that a reader will be distracted by the readable... </p>
                 <p className="text-accent tracking-wide font-medium">5 hours ago</p>
               </div>
             </div>
