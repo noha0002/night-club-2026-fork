@@ -31,17 +31,21 @@ const Header = () => {
   const [lineStyle, setLineStyle] = useState({ left: 0, width: 0, opacity: 0 });
 
   useEffect(() => {
-    if (ulRef.current) {
-      const activeLink = ulRef.current.querySelector("[data-active='true']");
-      if (activeLink) {
-        const ul = ulRef.current.getBoundingClientRect();
-        const li = activeLink.getBoundingClientRect();
-        setLineStyle({
-          left: li.left - ul.left + 12,
-          width: li.width - 24,
-          opacity: 1,
-        });
-      }
+    // if (ulRef.current) {
+    //   const activeLink = ulRef.current.querySelector("[data-active='true']");
+    //   if (activeLink) {
+    //     const ul = ulRef.current.getBoundingClientRect();
+    //     const li = activeLink.getBoundingClientRect();
+    //     setLineStyle({
+    //       left: li.left - ul.left + 12,
+    //       width: li.width - 24,
+    //       opacity: 1,
+    //     });
+    //   }
+    // }
+    const popover = document.getElementById("menu-open");
+    if (popover) {
+      popover.hidePopover();
     }
   }, [pathname]);
 

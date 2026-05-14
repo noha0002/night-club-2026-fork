@@ -26,7 +26,7 @@ function BookForm() {
 
         <input placeholder="Your Contact Number" name="contact-num" className="border border-text text-lg pl-3 pr-3 pt-4.5 pb-4.5 w-full"></input>
 
-        <textarea placeholder="Your Comment" name="comment" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full h-8 md:col-span-2 md:h-90.75"></textarea>
+        <textarea placeholder="Your Comment" name="comment" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full h-91.5 md:col-span-2 md:h-90.75"></textarea>
 
         <div className="flex justify-end md:col-span-2">
           <Button>Reserve</Button>
