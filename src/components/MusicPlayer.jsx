@@ -4,6 +4,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Image from "next/image";
 import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 import ButtonForside from "./ButtonForside";
 
 const songs = [
@@ -86,7 +87,7 @@ const MusicPlayer = () => {
             {songs.map((song, index) => (
               <div
                 key={song.id}
-                className="relative h-[250px] lg:h-[10px]"
+                className="relative h-[250px] w-full"
                 onClick={() => handleSelectAndPlay(index, playerRefMobile)}
               >
                 <Image
@@ -117,7 +118,7 @@ const MusicPlayer = () => {
       {/* Desktop */}
       <div className="hidden lg:block">
         <div className="flex">
-          <div className="relative w-[300px] h-[200px] ">
+          <div className="relative w-[300px] h-[200px]">
             <Image
               src={songs[current].cover}
               alt={songs[current].title}
@@ -181,7 +182,7 @@ const MusicPlayer = () => {
               ◀
             </ButtonForside>
           </div>
-          <div className="absolute z-20 lg:top-1/2 lg:left-[101%] ">
+          <div className="absolute z-20 lg:top-1/2 lg:left-[101%]">
             <ButtonForside onClick={() => slideRefDesktop.current.goNext()}>
               ▶
             </ButtonForside>
