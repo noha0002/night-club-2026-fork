@@ -8,7 +8,7 @@ import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.s
 async function BookTable({ searchParams }) {
   const { eventId } = await searchParams;
 
-  // HUSK At ÆNDRE URL'EN + SKAL HENTE FRA EVENTS I API'ET
+  // HUSK At ÆNDRE URL'EN
   const res = await fetch("http://localhost:4000/events");
   const events = await res.json();
 

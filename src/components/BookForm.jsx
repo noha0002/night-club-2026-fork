@@ -25,7 +25,6 @@ function BookForm({ events = [], eventId, selectedTable }) {
         <input name="num-of-guest" type="number" placeholder="Number of Guests" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25" />
 
         <select name="choose-night" defaultValue={eventId || ""} className=" bg-background-secondary border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25">
-          {/* HUSK AT TEST EFTER EVENT-SIDEN ER FÆRDIG */}
           <option value="" disabled>
             Choose Night
           </option>
