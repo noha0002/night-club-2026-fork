@@ -48,24 +48,7 @@ export default function Home() {
 
       <TestimonialsFetching />
 
-      <div>
-        <Heading>RECENT BLOG</Heading>
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full1.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full2.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full3.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-      </div>
+   
     </div>
   );
 }

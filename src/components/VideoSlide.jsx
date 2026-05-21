@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Image from "next/image";
-import Button from "@/components/Button";
+import ButtonForside from "@/components/ButtonForside";
 
 const Videos = [
   {
@@ -58,8 +58,8 @@ const VideoSlide = () => {
 
       {Videos.length > 1 && (
         <div className="flex justify-center gap-4 mt-4">
-          <Button onClick={() => slideRef.current.goBack()}>◀</Button>
-          <Button onClick={() => slideRef.current.goNext()}>▶</Button>
+          <ButtonForside onClick={() => slideRef.current.goBack()}>◀</ButtonForside>
+          <ButtonForside onClick={() => slideRef.current.goNext()}>▶</ButtonForside>
         </div>
       )}
     </div>
