@@ -16,10 +16,10 @@ const Footer = () => {
                 Kompagnistræde 278 <br /> 1265 Købehavn K
               </p>
             </div>
-            z
+
             <div className="flex flex-col md:items-start">
               <h3 className="text-accent text-2xl font-medium tracking-wide">OPENING HOURS</h3>
-              <p className="text-lg font-normal leading-8 tracking-wide md:text-left max-w-64">
+              <p className="text-lg font-normal leading-8 tracking-wide md:text-left whitespace-nowrap">
                 WED - THU 10:30 PM TO 3 AM <br /> SAT - SUN: 11 PM TO 5 AM
               </p>
             </div>
@@ -29,6 +29,7 @@ const Footer = () => {
             <section className="flex flex-col gap-15 mb-10 mt-2.5 items-start md:mt-0">
               <h3 className="text-accent text-2xl font-medium tracking-wide">NEWS</h3>
               <div className="flex gap-8">
+                {/* HUSK AT SKIFTE BILLEDER UD MED DEM I ASSETS */}
                 <Image src="/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
                 <div className="flex flex-col gap-2 items-start">
