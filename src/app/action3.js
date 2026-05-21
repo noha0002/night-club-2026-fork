@@ -20,7 +20,7 @@ const action3 = async (eventId, prevState, formData) => {
 
   try {
     // HUSK AT ÆNDRE URL'EN
-    const res = await fetch("http://localhost:4000/comments", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const action = async (prevState, formData) => {
 
   try {
     // HUSK AT ÆNDRE URL'EN
-    const res = await fetch("http://localhost:4000/contact_messages", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact_messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

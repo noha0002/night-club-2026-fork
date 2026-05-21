@@ -6,10 +6,10 @@ async function BookTable({ searchParams }) {
   const { eventId } = await searchParams;
 
   // HUSK At ÆNDRE URL'EN
-  const res = await fetch("http://localhost:4000/events");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
   const events = await res.json();
 
-  const res2 = await fetch(`http://localhost:4000/reservations`);
+  const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`);
   const reservations = await res2.json();
 
   return (

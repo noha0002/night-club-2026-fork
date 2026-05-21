@@ -8,6 +8,10 @@ const nextConfig = {
         port: "4000",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "night-club-2026.onrender.com",
+      },
     ],
   },
 };

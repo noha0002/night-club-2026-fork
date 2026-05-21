@@ -33,11 +33,11 @@ const action2 = async (prevState, formData) => {
   }
 
   try {
-    const eventRes = await fetch(`http://localhost:4000/events/${parseInt(resnight)}`);
+    const eventRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${parseInt(resnight)}`);
     const event = await eventRes.json();
 
     // HUSK AT ÆNDRE URL'EN
-    const res = await fetch("http://localhost:4000/reservations", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
