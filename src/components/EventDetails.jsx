@@ -6,12 +6,12 @@ import CommentForm from "@/components/CommentForm";
 import Link from "next/link";
 
 async function EventDetails({ slug }) {
-  const res = await fetch(`http://localhost:4000/events?slug=${slug}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?slug=${slug}`);
   const events = await res.json();
   const event = events[0];
   const eventId = event.id;
 
-  const commentsRes = await fetch(`http://localhost:4000/comments?eventId=${eventId}`);
+  const commentsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`);
   const comments = await commentsRes.json();
 
   return (
@@ -20,7 +20,7 @@ async function EventDetails({ slug }) {
 
       {/* SPØRG OM URL SKAL ÆNDRES + BILLEDET FIX NÅR DER MERGES (NEXT.CONFIG)*/}
       {/* {`http://localhost:4000${event.heroAsset.url}`} */}
-      <Image src={event.heroAsset.url} alt={event.heroAsset.alt} width={event.heroAsset.width} height={event.heroAsset.height} className="w-360 h-auto mt-10 md:justify-center md:mx-auto md:mt-20" />
+      <Image src={`${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset.url}`} alt={event.heroAsset.alt} width={event.heroAsset.width} height={event.heroAsset.height} className="w-360 h-auto mt-10 md:justify-center md:mx-auto md:mt-20" />
 
       <main className="p-6 mt-4 mb-10 md:max-w-360 md:mx-auto">
         <section className="flex flex-col gap-15 mb-20">
