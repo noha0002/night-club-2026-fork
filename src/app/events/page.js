@@ -18,7 +18,9 @@ export default function EventsPage() {
             Content="Night Club opens its doors again with an evening of house, visuals, and live percussion on the main stage. Guests can expect welcome drinks from 21:00, an upgraded lighting setup, and a program that builds toward a big countdown show at midnight."
           />
           <div className="flex justify-center">
-            <Button>Read more</Button>
+            <a href="/events/neon-nights-grand-opening">
+              <Button>Read more</Button>
+            </a>
           </div>
         </div>
 
@@ -29,7 +31,9 @@ export default function EventsPage() {
             Content="A full evening dedicated to classic floorfillers from the 80s and 90s. The DJ team mixes pop, disco, and old school R&B while the bar serves signature cocktails inspired by the biggest club hits of the era."
           />
           <div className="flex justify-center">
-            <Button>Read more</Button>
+            <a href="/events/neon-nights-grand-opening">
+              <Button>Read more</Button>
+            </a>
           </div>
         </div>
         <div className="order-3 lg:order-4">
@@ -46,7 +50,9 @@ export default function EventsPage() {
             Content="Friday's program pushes tempo and sub-bass all the way up with guest DJs, an MC host, and a crowd that comes for heavy drops and a dark club atmosphere. The night is aimed at guests who want to get close to the stage and feel the sound physically."
           />
           <div className="flex justify-center">
-            <Button>Read more</Button>
+            <a href="/events/neon-nights-grand-opening">
+              <Button>Read more</Button>
+            </a>
           </div>
         </div>
       </div>
