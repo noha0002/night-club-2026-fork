@@ -55,7 +55,7 @@ const action2 = async (prevState, formData) => {
     });
 
     if (!res.ok) {
-      return { success: false, message: "Failed to reserve event. Try Again" };
+      return { success: false, message: "Failed to reserve event and/or table. Try Again" };
     }
 
     return { success: true, message: "Your event has been reserved" };

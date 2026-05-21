@@ -4,7 +4,7 @@ import action2 from "@/app/action2";
 import Form from "next/form";
 import { useActionState } from "react";
 
-function BookForm({ events = [], eventId, selectedTable }) {
+function BookForm({ events = [], eventId, selectedTable, onEventChange }) {
   const [state, resAction, isPending] = useActionState(action2, {
     message: "",
   });
@@ -20,11 +20,11 @@ function BookForm({ events = [], eventId, selectedTable }) {
 
         <input name="email" type="email" placeholder="Your Email" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25" />
 
-        <input name="table-num" type="number" placeholder="Table Number" value={selectedTable || ""} onChange={() => {}} className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25" />
+        <input name="table-num" type="number" placeholder="Table Number" value={selectedTable || ""} readOnly className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25" />
 
         <input name="num-of-guest" type="number" placeholder="Number of Guests" className="border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25" />
 
-        <select name="choose-night" defaultValue={eventId || ""} className=" bg-background-secondary border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25">
+        <select name="choose-night" defaultValue={eventId || ""} onChange={(e) => onEventChange(e.target.value)} className=" bg-background-secondary border border-text pl-3 pr-3 pt-4.5 pb-4.5 w-full md:max-h-21.25">
           <option value="" disabled>
             Choose Night
           </option>

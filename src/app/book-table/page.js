@@ -1,9 +1,6 @@
 "use server";
 import Heading from "@/components/Heading";
-import TableBooking from "@/components/TableBooking";
-import BookForm from "@/components/BookForm";
 import BookTableClient from "@/components/BookTableClient";
-import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime";
 
 async function BookTable({ searchParams }) {
   const { eventId } = await searchParams;
@@ -12,12 +9,15 @@ async function BookTable({ searchParams }) {
   const res = await fetch("http://localhost:4000/events");
   const events = await res.json();
 
+  const res2 = await fetch(`http://localhost:4000/reservations`);
+  const reservations = await res2.json();
+
   return (
     <div className="">
       <Heading>Book Table</Heading>
 
       <main className="p-6 mt-4 mb-10 md:mx-auto md:max-w-360">
-        <BookTableClient events={events} eventId={eventId} />
+        <BookTableClient events={events} eventId={eventId} reservations={reservations} />
       </main>
     </div>
   );
