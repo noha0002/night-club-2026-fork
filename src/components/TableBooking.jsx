@@ -19,15 +19,26 @@ const tables = [
   { id: 15, img: "/table_3.png" },
 ];
 
-const TableBooking = ({ selectedTable, onSelectTable }) => {
+const TableBooking = ({ selectedTable, onSelectTable, bookedTables = [] }) => {
   return (
     <section className="flex flex-col gap-2 items-center justify-center mt-10 mb-15 md:grid md:grid-cols-5 md:gap-10">
-      {tables.map((table) => (
-        <div key={table.id} className={`relative cursor-pointer transition-all duration-200 ${selectedTable === table.id ? "opacity-70 outline-2 outline-accent" : "hover:opacity-70"}`} onClick={() => onSelectTable(table.id)}>
-          <Image src={table.img} alt={`Table ${table.id}`} width={285} height={186} />
-          <h2 className="absolute inset-0 flex items-center justify-center text-4xl">{table.id}</h2>
-        </div>
-      ))}
+      {tables.map((table) => {
+        const isBooked = bookedTables.includes(table.id);
+
+        return (
+          <div
+            key={table.id}
+            className={`relative cursor-pointer transition-all duration-200 ${isBooked ? "opacity-50 cursor-not-allowed text-gray-700" : "cursor-pointer hover:opacity-70"} 
+        
+        ${selectedTable === table.id ? "opacity-70 outline-2 outline-accent" : ""}`}
+            onClick={() => !isBooked && onSelectTable(table.id)}
+          >
+            <Image src={table.img} alt={`Table ${table.id}`} width={285} height={186} />
+            <h2 className="absolute inset-0 flex items-center justify-center text-4xl">{table.id}</h2>
+            {isBooked && <span className="absolute inset-0 flex items-center justify-center uppercase text-3xl font-black text-accent">Reserved</span>}
+          </div>
+        );
+      })}
     </section>
   );
 };
