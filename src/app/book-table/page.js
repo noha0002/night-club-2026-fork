@@ -9,7 +9,7 @@ async function BookTable({ searchParams }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
   const events = await res.json();
 
-  const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`);
+  const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, { cache: "no-store" });
   const reservations = await res2.json();
 
   return (

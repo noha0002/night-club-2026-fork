@@ -11,7 +11,7 @@ async function EventDetails({ slug }) {
   const event = events[0];
   const eventId = event.id;
 
-  const commentsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`);
+  const commentsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`, { cache: "no-store" });
   const comments = await commentsRes.json();
 
   return (
