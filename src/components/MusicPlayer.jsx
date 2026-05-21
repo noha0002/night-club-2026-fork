@@ -5,6 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 import Image from "next/image";
 import AudioPlayer from "react-h5-audio-player";
 import Button from "./Button";
+import EvenTekst from "./EventTekst";
 
 const songs = [
   {
