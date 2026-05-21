@@ -30,3 +30,9 @@ body {
   color: var(--color-text);
   font-family: var(--font-ubuntu);
 }
+.rhap_container {  background-color: black !important; }
+.rhap_progress-bar { background-color: #FF2A70 !important; }
+.rhap_progress-filled, .rhap_progress-indicator, .rhap_volume-bar { background-color: #ffffff !important; }
+.rhap_volume-indicator { background-color: #FF2A70 !important; }
+.rhap_button-clear { color: #ffffff !important; }
+.rhap_time { color: #ffffff !important; }
