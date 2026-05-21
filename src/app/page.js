@@ -1,14 +1,12 @@
 import Image from "next/image";
-
 import Button from "@/components/Button";
-import EventImg from "@/components/EventImg";
-import EventTekst from "@/components/EventTekst";
 import Heading from "@/components/Heading";
 import GalleryOne from "@/components/GalleryOne";
 import Fetching from "@/components/Fetching";
 import VideoSlide from "@/components/VideoSlide";
 import MusicPlayer from "@/components/MusicPlayer";
 import TestimonialsFetching from "@/components/TestiFetch";
+console.log(process.env.NEXT_PUBLIC_API_URL);
 
 export default function Home() {
   return (
@@ -19,7 +17,7 @@ export default function Home() {
           <div className="absolute left-10">
             <h2 className="flex items-center font-medium text-6xl lg:ml-[350px] lg:text-9xl">
               N
-              <Image src="/assets/icon/Favicon.svg" alt="Logo" className="invert -mx-2 " width={50} height={30} />
+              <Image  src="/assets/icon/Favicon.svg" alt="Logo" className="invert -mx-2 lg:w-30" width={50} height={30} />
               <span>GHT</span>
               <span className="mx-2">CLUB</span>
             </h2>
@@ -48,24 +46,7 @@ export default function Home() {
 
       <TestimonialsFetching />
 
-      <div>
-        <Heading>RECENT BLOG</Heading>
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full1.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full2.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-
-        <div className="lg:flex lg:justify-center">
-          <EventImg Img="/assets/content-img/blog_full3.jpg" alt="" />
-        </div>
-        <EventTekst Title="more than 20 yea..." RedTekst="BY: Admin  /  3 Comments  /  16 Nov 2018" Content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" />
-      </div>
+   
     </div>
   );
 }
