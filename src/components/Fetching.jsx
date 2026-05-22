@@ -3,6 +3,9 @@ import Gallery from "./Gallery";
 import Slideshow from "./Slideshow";
 
 const Fetching = async () => {
+  "use cache";
+  cacheLife("hours");
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
   const events = await res.json();
   const res1 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/gallery`);
