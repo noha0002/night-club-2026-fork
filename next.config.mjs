@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    cacheComponents: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -11,6 +14,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "night-club-2026.onrender.com",
+        pathname: "/**",
       },
     ],
   },
