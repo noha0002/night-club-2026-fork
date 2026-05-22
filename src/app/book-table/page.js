@@ -1,22 +1,17 @@
 import Heading from "@/components/Heading";
 import BookTableClient from "@/components/BookTableClient";
+import { Suspense } from "react";
+import BookTableFetch from "@/components/BookTableFetch";
 
 async function BookTable({ searchParams }) {
-  const { eventId } = await searchParams;
-
-  // HUSK At ÆNDRE URL'EN
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`, { cache: "no-store" });
-  const events = await res.json();
-
-  const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, { cache: "no-store" });
-  const reservations = await res2.json();
-
   return (
     <div className="">
       <Heading>Book Table</Heading>
 
       <main className="p-6 mt-4 mb-10 md:mx-auto md:max-w-360">
-        <BookTableClient events={events} eventId={eventId} reservations={reservations} />
+        <Suspense fallback={<p className="text-center text-lg font-light tracking-wide md:text-xl">Loading...</p>}>
+          <BookTableFetch searchParams={searchParams} />
+        </Suspense>
       </main>
     </div>
   );
