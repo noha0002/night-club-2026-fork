@@ -16,6 +16,9 @@ async function getEvent(slug) {
 }
 
 async function EventDetails({ slug }) {
+  "use cache";
+  cacheLife("hours");
+
   const event = await getEvent(slug);
   const eventId = event.id;
 
