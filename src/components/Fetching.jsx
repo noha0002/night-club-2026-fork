@@ -1,4 +1,3 @@
-"use server";
 import Gallery from "./Gallery";
 import Slideshow from "./Slideshow";
 import { cacheLife } from "next/cache";

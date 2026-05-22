@@ -1,4 +1,3 @@
-"use server";
 import Testimonials from "./Testimonials";
 import { cacheLife } from "next/cache";
 
