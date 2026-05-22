@@ -1,8 +1,8 @@
-import EventDetails from "@/components/EventDetails";
 import { Suspense } from "react";
+import EventDetails from "@/components/EventDetails";
 
-async function EventSingle({ params }) {
-  const { slug } = await params;
+export default function EventSingle({ params }) {
+  const { slug } = params;
 
   return (
     <Suspense fallback={<p className="text-center text-lg font-light tracking-wide md:text-xl">Loading...</p>}>
@@ -10,5 +10,3 @@ async function EventSingle({ params }) {
     </Suspense>
   );
 }
-
-export default EventSingle;
