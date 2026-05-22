@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import EventDetails from "@/components/EventDetails";
 
 async function EventSingle({ params }) {

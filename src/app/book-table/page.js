@@ -1,6 +1,3 @@
-"use server";
-export const dynamic = "force-dynamic";
-
 import Heading from "@/components/Heading";
 import BookTableClient from "@/components/BookTableClient";
 

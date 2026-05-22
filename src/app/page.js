@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import Image from "next/image";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
