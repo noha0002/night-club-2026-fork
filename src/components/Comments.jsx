@@ -18,3 +18,5 @@ async function Comments({ eventId }) {
     </div>
   );
 }
+
+export default Comments;
