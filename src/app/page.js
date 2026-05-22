@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
@@ -17,7 +19,7 @@ export default function Home() {
           <div className="absolute left-10">
             <h2 className="flex items-center font-medium text-6xl lg:ml-[350px] lg:text-9xl">
               N
-              <Image  src="/assets/icon/Favicon.svg" alt="Logo" className="invert -mx-2 lg:w-30" width={50} height={30} />
+              <Image src="/assets/icon/Favicon.svg" alt="Logo" className="invert -mx-2 lg:w-30" width={50} height={30} />
               <span>GHT</span>
               <span className="mx-2">CLUB</span>
             </h2>
@@ -45,8 +47,6 @@ export default function Home() {
       </div>
 
       <TestimonialsFetching />
-
-   
     </div>
   );
 }
