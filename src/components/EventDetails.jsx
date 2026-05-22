@@ -1,21 +1,23 @@
-"use server";
 import Heading from "@/components/Heading";
 import Image from "next/image";
 import Button from "@/components/Button";
 import CommentForm from "@/components/CommentForm";
 import Link from "next/link";
-
 import { Suspense } from "react";
 import Comments from "@/components/Comments";
+import { cacheLife } from "next/cache";
 
-async function EventDetails({ slug }) {
+async function getEvent(slug) {
+  "use cache";
+  cacheLife("hours");
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?slug=${slug}`);
   const events = await res.json();
-  const event = events[0];
-  const eventId = event.id;
+  return events[0];
+}
 
-  // const commentsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`, { cache: "no-store" });
-  // const comments = await commentsRes.json();
+async function EventDetails({ slug }) {
+  const event = await getEvent(slug);
+  const eventId = event.id;
 
   return (
     <div className="">
