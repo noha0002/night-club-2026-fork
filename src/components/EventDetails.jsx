@@ -16,10 +16,12 @@ async function getEvent(slug) {
 }
 
 async function EventDetails({ slug }) {
-  "use cache";
-  cacheLife("hours");
+  console.log("slug:", slug);
 
   const event = await getEvent(slug);
+
+  if (!event) return <p>Event not found</p>;
+
   const eventId = event.id;
 
   return (
