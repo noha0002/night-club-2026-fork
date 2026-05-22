@@ -1,6 +1,6 @@
 "use server";
-import cacheLife from "next/cache";
 import Testimonials from "./Testimonials";
+import { cacheLife } from "next/cache";
 
 const TestimonialsFetching = async () => {
   "use cache";

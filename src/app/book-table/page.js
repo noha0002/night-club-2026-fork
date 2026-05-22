@@ -6,7 +6,7 @@ async function BookTable({ searchParams }) {
   const { eventId } = await searchParams;
 
   // HUSK At ÆNDRE URL'EN
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`, { cache: "no-store" });
   const events = await res.json();
 
   const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, { cache: "no-store" });
