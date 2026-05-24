@@ -7,8 +7,11 @@ const Fetching = async () => {
   cacheLife("hours");
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
+  if (!res.ok) return null;
   const events = await res.json();
+
   const res1 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/gallery`);
+  if (!res1.ok) return null;
   const gallery = await res1.json();
 
   return (
