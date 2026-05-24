@@ -2,9 +2,9 @@
 import Image from "next/image";
 
 const SocialImg = [
-  { id: 1, img: "/twitter.svg" },
-  { id: 2, img: "/facebook.svg" },
-  { id: 3, img: "/snapchat.svg" },
+  { id: 1, img: "/facebook.svg" },
+  { id: 2, img: "/snapchat.svg" },
+  { id: 3, img: "/instagram.svg" },
 ];
 
 const Socials = () => {

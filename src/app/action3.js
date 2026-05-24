@@ -2,12 +2,11 @@
 const action3 = async (eventId, prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  //   Tæller for ContactForm
+  // ContactForm
   const resname = formData.get("name");
-  const resemail = formData.get("email");
+  // const resemail = formData.get("email");
   const rescomment = formData.get("comment");
 
-  // Valideringer
   if (!resname) {
     return { success: false, message: "Name is required" };
   }
@@ -19,7 +18,6 @@ const action3 = async (eventId, prevState, formData) => {
   }
 
   try {
-    // HUSK AT ÆNDRE URL'EN
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments`, {
       method: "POST",
       headers: {

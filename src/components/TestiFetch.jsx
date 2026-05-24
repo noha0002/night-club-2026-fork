@@ -5,11 +5,16 @@ const TestimonialsFetching = async () => {
   "use cache";
   cacheLife("hours");
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonials`);
-  if (!res.ok) return null;
-  const testimonials = await res.json();
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonials`);
+    if (!res.ok) return null;
+    const testimonials = await res.json();
 
-  return <Testimonials images={testimonials} />;
+    return <Testimonials images={testimonials} />;
+  } catch (error) {
+    console.error("Error fetching testimonials:", error);
+    return null;
+  }
 };
 
 export default TestimonialsFetching;

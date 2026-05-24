@@ -2,7 +2,7 @@
 const action2 = async (prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  //   Tæller for BookForm
+  // BookForm
   const resname = formData.get("resname");
   const resemail = formData.get("email");
   const restable = formData.get("table-num");
@@ -10,8 +10,6 @@ const action2 = async (prevState, formData) => {
   const resnight = formData.get("choose-night");
   const rescontact = formData.get("contact-num");
   const rescomment = formData.get("comment");
-
-  // BookForm
 
   if (!resname) {
     return { success: false, message: "Name is required" };
@@ -36,7 +34,6 @@ const action2 = async (prevState, formData) => {
     const eventRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${parseInt(resnight)}`);
     const event = await eventRes.json();
 
-    // HUSK AT ÆNDRE URL'EN
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, {
       method: "POST",
       headers: {

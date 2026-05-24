@@ -19,6 +19,7 @@ async function EventDetails({ slug }) {
   console.log("slug:", slug);
 
   const event = await getEvent(slug);
+  console.log("imageUrl:", `${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset.url}`);
 
   if (!event) return <p>Event not found</p>;
 
