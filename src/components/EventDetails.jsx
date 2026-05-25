@@ -10,16 +10,14 @@ import { cacheLife } from "next/cache";
 async function getEvent(slug) {
   "use cache";
   cacheLife("hours");
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?slug=${slug}`);
   const events = await res.json();
   return events[0];
 }
 
 async function EventDetails({ slug }) {
-  console.log("slug:", slug);
-
   const event = await getEvent(slug);
-  console.log("imageUrl:", `${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset.url}`);
 
   if (!event) return <p>Event not found</p>;
 

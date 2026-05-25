@@ -26,13 +26,28 @@
 }
 
 body {
-  background: var(--color-background);
+  background-image: url("/assets/bg/main_bg.png");
   color: var(--color-text);
   font-family: var(--font-ubuntu);
 }
-.rhap_container {  background-color: black !important; }
-.rhap_progress-bar { background-color: #FF2A70 !important; }
-.rhap_progress-filled, .rhap_progress-indicator, .rhap_volume-bar { background-color: #ffffff !important; }
-.rhap_volume-indicator { background-color: #FF2A70 !important; }
-.rhap_button-clear { color: #ffffff !important; }
-.rhap_time { color: #ffffff !important; }
+
+.rhap_container {
+  background-color: black !important;
+}
+.rhap_progress-bar {
+  background-color: #ff2a70 !important;
+}
+.rhap_progress-filled,
+.rhap_progress-indicator,
+.rhap_volume-bar {
+  background-color: #ffffff !important;
+}
+.rhap_volume-indicator {
+  background-color: #ff2a70 !important;
+}
+.rhap_button-clear {
+  color: #ffffff !important;
+}
+.rhap_time {
+  color: #ffffff !important;
+}

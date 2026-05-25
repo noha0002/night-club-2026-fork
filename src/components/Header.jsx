@@ -69,7 +69,7 @@ const Header = () => {
       <div className="absolute top-0 left-0 w-8 h-8 bg-accent [clip-path:polygon(0_0,100%_0,0_100%)]"></div>
       <div className="absolute bottom-0 right-0 w-8 h-8 bg-accent [clip-path:polygon(100%_0,100%_100%,0_100%)]"></div>
 
-      <Image src="/Logo_main.svg" alt="Logo" width={189} height={46} className="md:hidden" />
+      <Image src="/assets/icon/Logo_main.svg" alt="Logo" width={189} height={46} className="md:hidden" />
 
       <button popoverTarget="menu-open" className="flex flex-col gap-1.5 cursor-pointer md:hidden">
         <span className="w-10 h-1 rounded bg-text block"></span>
@@ -94,7 +94,7 @@ const Header = () => {
       </aside>
 
       <div className="hidden md:flex md:items-center md:justify-around  w-full">
-        <Image src="/Logo_main.svg" alt="Logo" width={189} height={46} />
+        <Image src="/assets/icon/Logo_main.svg" alt="Logo" width={189} height={46} />
 
         <ul ref={ulRef} className="relative flex gap-15 font-normal md:text-2xl md:tracking-wider md:pb-4">
           <span className="absolute bottom-0 h-0.5 [background:var(--linear-gradient)] transition-all duration-500" style={{ left: lineStyle.left, width: lineStyle.width, opacity: lineStyle.opacity }} />
