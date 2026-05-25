@@ -6,7 +6,8 @@ import Fetching from "@/components/Fetching";
 import VideoSlide from "@/components/VideoSlide";
 import MusicPlayer from "@/components/MusicPlayer";
 import TestimonialsFetching from "@/components/TestiFetch";
-console.log(process.env.NEXT_PUBLIC_API_URL);
+import { Suspense } from "react";
+// console.log(process.env.NEXT_PUBLIC_API_URL);
 
 export default function Home() {
   return (
@@ -35,7 +36,9 @@ export default function Home() {
           <GalleryOne />
         </div>
         <Heading>events of the month</Heading>
-        <Fetching />
+        <Suspense fallback="Loading...">
+          <Fetching />
+        </Suspense>
       </div>
       <div>
         <Heading>night club track</Heading>
@@ -44,7 +47,9 @@ export default function Home() {
         <VideoSlide />
       </div>
 
-      <TestimonialsFetching />
+      <Suspense fallback={null}>
+        <TestimonialsFetching />
+      </Suspense>
     </div>
   );
 }

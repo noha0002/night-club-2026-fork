@@ -1,5 +1,4 @@
 import Heading from "@/components/Heading";
-import BookTableClient from "@/components/BookTableClient";
 import { Suspense } from "react";
 import BookTableFetch from "@/components/BookTableFetch";
 
