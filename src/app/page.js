@@ -7,7 +7,6 @@ import VideoSlide from "@/components/VideoSlide";
 import MusicPlayer from "@/components/MusicPlayer";
 import TestimonialsFetching from "@/components/TestiFetch";
 import { Suspense } from "react";
-// console.log(process.env.NEXT_PUBLIC_API_URL);
 
 export default function Home() {
   return (
