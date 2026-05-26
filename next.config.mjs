@@ -2,7 +2,6 @@
 const nextConfig = {
   cacheComponents: true,
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: "http",
