@@ -2,7 +2,7 @@
 const action3 = async (eventId, prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  // ContactForm
+  // CommentForm
   const resname = formData.get("name");
   // const resemail = formData.get("email");
   const rescomment = formData.get("comment");
