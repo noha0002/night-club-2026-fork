@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "night-club-2026.onrender.com",
+        hostname: "happiness-night-club-api.onrender.com",
         pathname: "/**",
       },
     ],
