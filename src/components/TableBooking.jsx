@@ -35,6 +35,7 @@ const TableBooking = ({ selectedTable, onSelectTable, bookedTables = [] }) => {
           >
             <Image src={table.img} alt={`Table ${table.id}`} width={285} height={186} />
             <h2 className="absolute inset-0 flex items-center justify-center text-3xl">{table.id}</h2>
+
             {isBooked && <span className="absolute inset-0 flex items-center justify-center uppercase text-3xl font-black text-accent">Reserved</span>}
           </div>
         );

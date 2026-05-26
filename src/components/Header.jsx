@@ -4,7 +4,9 @@ import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { hover, motion } from "framer-motion";
+import { motion } from "framer-motion";
+
+// AI genereret kode (specifikt animationerne) med ellers manuelle justeringer.
 
 const navLinks = [
   { name: "HOME", href: "/" },

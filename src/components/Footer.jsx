@@ -29,7 +29,7 @@ const Footer = () => {
             <section className="flex flex-col gap-15 mb-10 mt-2.5 items-start md:mt-0">
               <h3 className="text-accent text-2xl font-medium tracking-wide">NEWS</h3>
               <div className="flex gap-8">
-                <Image src="/assets/bg/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
+                <Image src="/assets/content-img/recent_post1.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
                 <div className="flex flex-col gap-2 items-start">
                   <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
 
               <div className="flex gap-8">
-                <Image src="/assets/bg/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
+                <Image src="/assets/content-img/recent_post2.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
                 <div className="flex flex-col gap-2 items-start">
                   <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
