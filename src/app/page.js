@@ -1,42 +1,62 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-import GalleryOne from "@/components/GalleryOne";
 import Fetching from "@/components/Fetching";
 import VideoSlide from "@/components/VideoSlide";
 import MusicPlayer from "@/components/MusicPlayer";
 import TestimonialsFetching from "@/components/TestiFetch";
-console.log(process.env.NEXT_PUBLIC_API_URL);
+import GalleryOne from "@/components/GalleryOne";
+import EmailForm from "@/components/EmailForm";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <div>
       <div className="relative w-full h-[800px]">
-        <Image src="/assets/bg/header_bg_2.jpg" fill alt="gallery" className="brightness-50 object-cover" unoptimized />
+        <Image
+          src="/assets/bg/header_bg_2.jpg"
+          fill
+          alt="gallery"
+          className="brightness-50 object-cover"
+          unoptimized
+        />
+
         <div className="relative z-10 top-110 lg:top-80">
           <div className="absolute left-10">
             <h2 className="flex items-center font-medium text-6xl lg:ml-[350px] lg:text-9xl">
               N
-              <Image  src="/assets/icon/Favicon.svg" alt="Logo" className="invert -mx-2 lg:w-30" width={50} height={30} />
+              <Image
+                src="/assets/icon/Favicon.svg"
+                alt="Logo"
+                className="invert -mx-2 lg:w-30"
+                width={50}
+                height={30}
+              />
               <span>GHT</span>
               <span className="mx-2">CLUB</span>
             </h2>
-            <Image src="/assets/bottom_line.png" alt="logo" width={850} height={130} className="lg:ml-[250px]" />
+
+            <Image
+              src="/assets/bottom_line.png"
+              alt="logo"
+              width={850}
+              height={130}
+              className="lg:ml-[250px]"
+            />
           </div>
-          <div className="absolute top-25 left-8 grid grid-cols-2 gap-4 lg:ml-[560px] lg:mt-30 ">
+
+          <div className="absolute top-25 left-8 grid grid-cols-2 gap-4 lg:ml-[560px] lg:mt-30">
             <Button ButtonText="VIEW EVENTS" />
             <Button ButtonText="BOOK TABLES" />
           </div>
         </div>
       </div>
-      <div>
-        <Heading>WELCOME IN NIGHTCLUB</Heading>
-        <div className="mx-5 mt-5">
-          <GalleryOne />
-        </div>
-        <Heading>events of the month</Heading>
+
+      <Suspense fallback={<p>Loading events...</p>}>
+      
         <Fetching />
-      </div>
+      </Suspense>
+
       <div>
         <Heading>night club track</Heading>
         <MusicPlayer />
@@ -44,9 +64,23 @@ export default function Home() {
         <VideoSlide />
       </div>
 
-      <TestimonialsFetching />
+      <Suspense fallback={<p>Loading testimonials...</p>}>
+        <TestimonialsFetching />
+      </Suspense>
 
-   
+      <div className="lg:ml-110 mt-15 mb-15">
+        <div className="lg:mr-100 text-center">
+          <h2 className="text-3xl font-bold uppercase">
+            Want The Latest Night Club News
+          </h2>
+          <br />
+          <p className="text-lg font-semibold">
+            Subscribe to our newsletter <br /> and never miss an{" "}
+            <span className="text-[#FF2A70]">Event</span>
+          </p>
+        </div>
+        <EmailForm />
+      </div>
     </div>
   );
 }
