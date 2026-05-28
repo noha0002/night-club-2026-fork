@@ -1,13 +1,15 @@
 import Image from "next/image";
-import Button from "@/components/Button";
+import Link from "next/link";
 import Heading from "@/components/Heading";
 import Fetching from "@/components/Fetching";
 import VideoSlide from "@/components/VideoSlide";
 import MusicPlayer from "@/components/MusicPlayer";
 import TestimonialsFetching from "@/components/TestiFetch";
-import GalleryOne from "@/components/GalleryOne";
+
 import EmailForm from "@/components/EmailForm";
 import { Suspense } from "react";
+
+import ButtonHero from "@/components/ButtonHero";
 
 export default function Home() {
   return (
@@ -45,15 +47,29 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute top-25 left-8 grid grid-cols-2 gap-4 lg:ml-[560px] lg:mt-30">
-            <Button ButtonText="VIEW EVENTS" />
-            <Button ButtonText="BOOK TABLES" />
+          <div className="absolute top-25 left-20 grid grid-cols-2 gap-4 lg:ml-[530px] lg:mt-30">
+            <Link href="/events">
+              <ButtonHero
+                style={{
+                  borderImage: "linear-gradient(to left, #ffffffa1, #FFFFFF) 1",
+                }}
+                ButtonText="VIEW EVENTS"
+              />
+            </Link>
+            <Link href="/book-table">
+              <ButtonHero
+                style={{
+                  background: "linear-gradient(to right, #FF2A70, #9B3FBF)",
+                  borderImage: "linear-gradient(to left, #ffffffba, #FFFFFF) 1",
+                }}
+                ButtonText="BOOK TABLES"
+              />
+            </Link>
           </div>
         </div>
       </div>
 
       <Suspense fallback={<p>Loading events...</p>}>
-      
         <Fetching />
       </Suspense>
 
