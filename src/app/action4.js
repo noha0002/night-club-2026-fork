@@ -11,7 +11,7 @@ const action4 = async (prevState, formData) => {
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/contact_messages`,
+      `${process.env.NEXT_PUBLIC_API_URL}/newsletters`,
       {
         method: "POST",
         headers: {

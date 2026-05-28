@@ -7,7 +7,7 @@ export const GalleryCard = ({ img, description }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div
-      className="relative w-full h-[300px] lg:h-[500px] overflow-hidden"
+      className="relative w-[390px] h-[400px] ml-5 lg:h-[500px] overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

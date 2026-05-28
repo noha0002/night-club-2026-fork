@@ -17,11 +17,27 @@ const Testimonials = ({ images = [] }) => {
 
   return (
     <div>
-      <Slide arrows={false} autoplay={false} onChange={(from, to) => setCurrent(to)} indicators={(index) => <div style={{ backgroundColor: getColor(index) }} className="w-4 h-5 mx-1 inline-block cursor-pointer" />}>
+      <Slide
+        arrows={false}
+        autoplay={false}
+        onChange={(from, to) => setCurrent(to)}
+        indicators={(index) => (
+          <div
+            style={{ backgroundColor: getColor(index) }}
+            className="w-4 h-5 mx-1 inline-block cursor-pointer"
+          />
+        )}
+      >
         {images.map((image, index) => (
           <div key={image.id} className="mt-10">
             <div className="relative h-[210px] w-[210px] mx-auto ">
-              <Image src={`http://localhost:4000${image.asset.url}`} alt={image.asset.alt} fill className="object-cover" unoptimized />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_API_URL}${image.asset.url}`}
+                alt={image.asset.alt}
+                fill
+                className="object-cover"
+                unoptimized
+              />
             </div>
             <div className="flex flex-col items-center text-center">
               <br />
