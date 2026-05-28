@@ -4,6 +4,8 @@ import Button from "@/components/Button";
 import EvenTekst from "@/components/EventTekst";
 
 async function getEvents() {
+  "use cache";
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
   return res.json();
 }
