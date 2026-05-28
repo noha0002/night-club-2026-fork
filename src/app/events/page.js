@@ -3,7 +3,15 @@ import Heading from "@/components/Heading";
 import Button from "@/components/Button";
 import EvenTekst from "@/components/EventTekst";
 
-export default function EventsPage() {
+async function getEvents() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`);
+  return res.json();
+}
+
+export default async function EventsPage() {
+  const events = await getEvents();
+  console.log(events.map((e) => e.slug));
+
   return (
     <div>
       <Heading>Events</Heading>
@@ -18,12 +26,11 @@ export default function EventsPage() {
             Content="Night Club opens its doors again with an evening of house, visuals, and live percussion on the main stage. Guests can expect welcome drinks from 21:00, an upgraded lighting setup, and a program that builds toward a big countdown show at midnight."
           />
           <div className="flex justify-center">
-            <a href="/events/neon-nights-grand-opening">
+            <a href={`/events/${events[0]?.slug}`}>
               <Button>Read more</Button>
             </a>
           </div>
         </div>
-
         <div className="order-4 lg:order-3">
           <EvenTekst
             Title="Retro Rewind: 80s & 90s"
@@ -31,7 +38,7 @@ export default function EventsPage() {
             Content="A full evening dedicated to classic floorfillers from the 80s and 90s. The DJ team mixes pop, disco, and old school R&B while the bar serves signature cocktails inspired by the biggest club hits of the era."
           />
           <div className="flex justify-center">
-            <a href="/events/neon-nights-grand-opening">
+            <a href={`/events/${events[1]?.slug}`}>
               <Button>Read more</Button>
             </a>
           </div>
@@ -39,7 +46,6 @@ export default function EventsPage() {
         <div className="order-3 lg:order-4">
           <Event Img="/assets/content-img/blog_full2.jpg" alt="" />
         </div>
-
         <div className="order-5">
           <Event Img="/assets/content-img/blog_full3.jpg" alt="" />
         </div>
@@ -50,7 +56,7 @@ export default function EventsPage() {
             Content="Friday's program pushes tempo and sub-bass all the way up with guest DJs, an MC host, and a crowd that comes for heavy drops and a dark club atmosphere. The night is aimed at guests who want to get close to the stage and feel the sound physically."
           />
           <div className="flex justify-center">
-            <a href="/events/neon-nights-grand-opening">
+            <a href={`/events/${events[2]?.slug}`}>
               <Button>Read more</Button>
             </a>
           </div>

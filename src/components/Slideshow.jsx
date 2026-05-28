@@ -4,6 +4,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Slideshow = ({ images }) => {
   const [current, setCurrent] = useState(0);
@@ -69,9 +70,11 @@ const Slideshow = ({ images }) => {
           animate={{ opacity: hovered ? 1 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <button className="bg-[#FF2A70] text-white px-6 py-2 font-bold uppercase">
-            Book Now
-          </button>
+          <Link href="book-table">
+            <button className="bg-[#FF2A70] text-white px-6 py-2 font-bold uppercase cursor-pointer">
+              Book Now
+            </button>
+          </Link>
         </motion.div>
         <motion.div
           className="absolute bottom-5 left-5 text-white z-1 bg-black"
