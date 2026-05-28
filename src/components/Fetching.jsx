@@ -1,4 +1,3 @@
-"use server";
 import Gallery from "./Gallery";
 import { GalleryOne } from "./GalleryOne";
 import Slideshow from "./Slideshow";

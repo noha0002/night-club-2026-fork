@@ -4,12 +4,12 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="relative bg-background-secondary  text-text text-center py-10 px-6 overflow-hidden tracking-wide md:px-0">
-      <Image src="/footerbg.jpg" alt="Footer Background" fill className="absolute top-0 left-0 w-full h-full object-cover -z-10" />
+      <Image src="/assets/bg/footerbg.jpg" alt="Footer Background" fill className="absolute top-0 left-0 w-full h-full object-cover -z-10" />
 
       <div className="max-w-7xl mx-auto">
         <div className="flex gap-40 justify-center mt-10">
           <section className="flex flex-col md:items-start gap-15 mb-10 mt-2.5">
-            <Image className="dark:invert" src="/Logo_main.svg" alt="Logo" width={228} height={54} />
+            <Image className="dark:invert" src="/assets/icon/Logo_main.svg" alt="Logo" width={228} height={54} />
             <div className="flex flex-col md:items-start">
               <h3 className="text-accent text-2xl font-medium tracking-wide">LOCATION</h3>
               <p className="text-lg font-normal leading-8 tracking-wide md:text-left">
@@ -29,8 +29,7 @@ const Footer = () => {
             <section className="flex flex-col gap-15 mb-10 mt-2.5 items-start md:mt-0">
               <h3 className="text-accent text-2xl font-medium tracking-wide">NEWS</h3>
               <div className="flex gap-8">
-                {/* HUSK AT SKIFTE BILLEDER UD MED DEM I ASSETS */}
-                <Image src="/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
+                <Image src="/assets/content-img/recent_post1.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
                 <div className="flex flex-col gap-2 items-start">
                   <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
@@ -39,7 +38,7 @@ const Footer = () => {
               </div>
 
               <div className="flex gap-8">
-                <Image src="/footerbg.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
+                <Image src="/assets/content-img/recent_post2.jpg" alt="Footer Background" width={120} height={120} className="object-cover w-32 h-32" />
 
                 <div className="flex flex-col gap-2 items-start">
                   <p className="text-lg leading-8 tracking-wide max-w-76.5 text-left">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
@@ -75,9 +74,9 @@ const Footer = () => {
           <section className="flex flex-col items-center gap-4 mb-15 mt-6 md:flex md:flex-col md:col-end-2 md:row-end-1">
             <h4 className="text-text text-lg font-medium tracking-wide">Stay Connected With Us</h4>
             <div className="flex gap-6 mt-1 mb-3">
-              <Image src="/facebook.svg" alt="Facebook" width={48} height={48} />
-              <Image src="/snapchat.svg" alt="Snapchat" width={48} height={48} />
-              <Image src="/instagram.svg" alt="Instagram" width={48} height={48} />
+              <Image src="/assets/icon/facebook.svg" alt="Facebook" width={48} height={48} />
+              <Image src="/assets/icon/snapchat.svg" alt="Snapchat" width={48} height={48} />
+              <Image src="/assets/icon/instagram.svg" alt="Instagram" width={48} height={48} />
             </div>
           </section>
 

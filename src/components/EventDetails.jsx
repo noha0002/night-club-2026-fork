@@ -1,25 +1,32 @@
-"use server";
 import Heading from "@/components/Heading";
 import Image from "next/image";
 import Button from "@/components/Button";
 import CommentForm from "@/components/CommentForm";
 import Link from "next/link";
+import { Suspense } from "react";
+import Comments from "@/components/Comments";
+import { cacheLife } from "next/cache";
 
-async function EventDetails({ slug }) {
+async function getEvent(slug) {
+  "use cache";
+  cacheLife("hours");
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?slug=${slug}`);
   const events = await res.json();
-  const event = events[0];
-  const eventId = event.id;
+  return events[0];
+}
 
-  const commentsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`, { cache: "no-store" });
-  const comments = await commentsRes.json();
+async function EventDetails({ slug }) {
+  const event = await getEvent(slug);
+
+  if (!event) return <p>Event not found</p>;
+
+  const eventId = event.id;
 
   return (
     <div className="">
       <Heading>{event.title}</Heading>
 
-      {/* SPØRG OM URL SKAL ÆNDRES + BILLEDET FIX NÅR DER MERGES (NEXT.CONFIG)*/}
-      {/* {`http://localhost:4000${event.heroAsset.url}`} */}
       <Image src={`${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset.url}`} alt={event.heroAsset.alt} width={event.heroAsset.width} height={event.heroAsset.height} className="w-360 h-auto mt-10 md:justify-center md:mx-auto md:mt-20" />
 
       <main className="p-6 mt-4 mb-10 md:max-w-360 md:mx-auto">
@@ -71,17 +78,9 @@ async function EventDetails({ slug }) {
           </div>
         </section>
 
-        <h1 className="uppercase text-3xl font-bold">{comments.length} comments</h1>
-        <section className="flex flex-col gap-8 mb-10 md:max-w-307.75">
-          {comments.map((comment) => (
-            <div key={comment.id}>
-              <p className="font-medium tracking-wide mt-6 pb-2 md:text-2xl">
-                {comment.name} · <span className="text-accent md:text-lg"> Posted {new Date(comment.date).toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" })}</span>
-              </p>
-              <p className="font-light tracking-wide md:text-lg">{comment.content}</p>
-            </div>
-          ))}
-        </section>
+        <Suspense fallback={<p>Loading comments...</p>}>
+          <Comments eventId={eventId} />
+        </Suspense>
 
         <section className="flex flex-col md:flex-none">
           <CommentForm eventId={eventId} />
