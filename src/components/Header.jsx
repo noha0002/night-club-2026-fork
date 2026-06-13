@@ -79,7 +79,7 @@ const Header = () => {
   useEffect(() => {
     const popover = document.getElementById("menu-open");
     if (popover) {
-      popover.hidePopover();
+      popover.hidePopover(); /** vil ikke have at burgermenu åbner i mobilsite, så vi skal lukke popover. */
     }
   }, [pathname]);
 
@@ -165,7 +165,7 @@ const Header = () => {
       />
 
       <button
-        popoverTarget="menu-open"
+        popoverTarget="menu-open" /** connected med asie, når man manuelt trykker på menu, åbner id. */
         className="flex flex-col gap-1.5 cursor-pointer md:hidden"
       >
         <span className="w-10 h-1 rounded bg-text block"></span>
@@ -173,7 +173,7 @@ const Header = () => {
         <span className="w-10 h-1 rounded bg-text block"></span>
       </button>
 
-      <aside id="menu-open" popover="manual">
+      <aside id="menu-open" popover="manual" /** manuelt trykker på den  */>
         <div className="fixed inset-0 flex items-center justify-center bg-background-secondary w-full h-full z-50">
           <button
             popoverTarget="menu-open"

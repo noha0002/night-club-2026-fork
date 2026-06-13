@@ -55,7 +55,9 @@ const MusicPlayer = () => {
     ); /** setCurrent(index) gemmer den som den aktuelt valgte sang i state */
     setPlaying(false);
     setTimeout(() => {
-      const audio = playerRef.current?.audio?.current;
+      const audio =
+        playerRef.current?.audio
+          ?.current; /** Det betyder: "tag playerRef.current.audio.current, men hvis playerRef.current eller .audio er null/undefined, returner undefined i stedet for at give fejl" (optional chaining) */
       if (audio) {
         audio.play();
         setPlaying(true);

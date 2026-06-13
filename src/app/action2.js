@@ -64,10 +64,11 @@ POST: "her er noget data, gem/opret det" (fx send en kontaktformular) */,
         success: false,
         message: "Failed to reserve event and/or table. Try Again",
       };
+      /** not answered så det fejl */
     }
 
     return { success: true, message: "Your event has been reserved" };
-  } catch (error) {
+  } catch (error) { /** hvilket som helst fejl */
     return {
       success: false,
       message: "An error occurred while reserving the event",
