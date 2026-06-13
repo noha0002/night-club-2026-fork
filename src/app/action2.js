@@ -13,7 +13,7 @@ const action2 = async (prevState, formData) => {
 
   if (!resname) {
     return { success: false, message: "Name is required" };
-  }
+  } /** hvis resname er tom → returner { success: false, message: "Name is required" } og stop funktionen her (resten af koden køres ikke). */
   if (!resemail) {
     return { success: false, message: "Email is required" };
   }
@@ -31,33 +31,47 @@ const action2 = async (prevState, formData) => {
   }
 
   try {
-    const eventRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${parseInt(resnight)}`);
+    const eventRes = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/events/${parseInt(resnight)}`,
+    );
     const event = await eventRes.json();
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: resname,
-        email: resemail,
-        table: restable,
-        guests: resguests,
-        date: event.date,
-        phone: rescontact,
-        eventId: parseInt(resnight),
-        content: rescomment,
-      }),
-    });
+    const res =
+      await /**await betyder "stop her og vent på svaret, før koden fortsætter" */ fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/reservations`,
+        {
+          method: "POST" /** GET: "giv mig data" (fx hent en liste af beskeder)
+POST: "her er noget data, gem/opret det" (fx send en kontaktformular) */,
+          headers: {
+            "Content-Type": "application/json",
+          } /**fortæller serveren: "den data jeg sender er JSON-format" (så serveren ved hvordan den skal læse body */,
+          body: JSON.stringify({
+            /** selve dataen du sender. JSON.stringify konverterer dit JS-objekt { name: "Anna", email: "..." } til en tekststreng, fordi fetch ikke kan sende rå JS-objekter — kun tekst/binary */
+            name: resname,
+            email: resemail,
+            table: restable,
+            guests: resguests,
+            date: event.date,
+            phone: rescontact,
+            eventId: parseInt(resnight),
+            content: rescomment,
+          }),
+        },
+      );
 
     if (!res.ok) {
-      return { success: false, message: "Failed to reserve event and/or table. Try Again" };
+      return {
+        success: false,
+        message: "Failed to reserve event and/or table. Try Again",
+      };
     }
 
     return { success: true, message: "Your event has been reserved" };
   } catch (error) {
-    return { success: false, message: "An error occurred while reserving the event" };
+    return {
+      success: false,
+      message: "An error occurred while reserving the event",
+    };
   }
 };
 

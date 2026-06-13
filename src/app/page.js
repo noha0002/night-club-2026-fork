@@ -62,7 +62,9 @@ export default function Home() {
                   background: "linear-gradient(to right, #FF2A70, #9B3FBF)",
                   borderImage: "linear-gradient(to left, #ffffffba, #FFFFFF) 1",
                 }}
-                ButtonText="BOOK TABLES"
+                ButtonText="BOOK TABLES" /** ikke behov for buttontext, kunne havde brugt children  
+                så fjern button text og bare tilføj titel her*/
+
               />
             </Link>
           </div>

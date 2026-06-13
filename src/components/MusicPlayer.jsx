@@ -36,20 +36,23 @@ const MusicPlayer = () => {
   const playerRefMobile = useRef(null);
   const playerRefDesktop = useRef(null);
 
-  const handlePlay = (playerRef) => {
-    const audio = playerRef.current?.audio?.current;
-    if (!audio) return;
-    if (playing) {
-      audio.pause();
-      setPlaying(false);
-    } else {
-      audio.play();
-      setPlaying(true);
-    }
-  };
+  // const handlePlay = (playerRef) => {
+  //   const audio = playerRef.current?.audio?.current;
+  //   if (!audio) return;
+  //   if (playing) {
+  //     audio.pause();
+  //     setPlaying(false);
+  //   } else {
+  //     audio.play();
+  //     setPlaying(true);
+  //   }
+  // };
 
   const handleSelectAndPlay = (index, playerRef) => {
-    setCurrent(index);
+    /** index position i songs-array'et (0, 1, 2...) for den sang du klikkede på */
+    setCurrent(
+      index,
+    ); /** setCurrent(index) gemmer den som den aktuelt valgte sang i state */
     setPlaying(false);
     setTimeout(() => {
       const audio = playerRef.current?.audio?.current;
